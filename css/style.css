@@ -347,6 +347,51 @@ section { padding: 100px 0; position: relative; }
   background: var(--cream-2);
 }
 
+/* ---------- Proof / track record ---------- */
+.proof-grid { display: grid; grid-template-columns: 380px 1fr; gap: 56px; align-items: center; margin-bottom: 40px; }
+.proof-card {
+  background: linear-gradient(150deg, var(--coral) 0%, var(--coral-dark) 100%);
+  border-radius: 32px; padding: 48px 36px; text-align: center; color: var(--white);
+  box-shadow: var(--shadow); position: relative; overflow: hidden;
+}
+.proof-card::before {
+  content: ""; position: absolute; width: 220px; height: 220px; border-radius: 50%;
+  background: rgba(255,255,255,.08); top: -80px; right: -80px;
+}
+.proof-badge {
+  width: 84px; height: 84px; margin: 0 auto 18px; border-radius: 26px;
+  background: var(--green); display: flex; align-items: center; justify-content: center;
+  transform: rotate(-8deg); box-shadow: 0 14px 28px rgba(0,0,0,.18);
+  animation: floaty 5s ease-in-out infinite;
+}
+.proof-badge svg { width: 42px; height: 42px; color: var(--white); }
+.proof-card .g-row { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 8px; position: relative; }
+.proof-card .g-row svg { width: 22px; height: 22px; }
+.proof-card .stars { display: flex; justify-content: center; gap: 3px; margin-bottom: 16px; position: relative; }
+.proof-card .stars svg { width: 17px; height: 17px; color: #FFB238; }
+.proof-card h3 { color: var(--white); font-size: 2.6rem; margin-bottom: 4px; position: relative; }
+.proof-card h3 span { font-size: 1.1rem; font-weight: 600; opacity: .75; }
+.proof-card p { color: rgba(255,255,255,.85); margin: 0; position: relative; font-size: .92rem; }
+.proof-text .mini-stats { display: flex; gap: 30px; flex-wrap: wrap; margin: 22px 0 28px; }
+.proof-text .mini-stats div strong { display: block; font-size: 1.5rem; color: var(--navy); font-family: 'Poppins',sans-serif; }
+.proof-text .mini-stats div span { font-size: .84rem; color: var(--text-muted); }
+
+/* ---------- Dedicated team panel ---------- */
+.badges-row {
+  display: flex; align-items: center; justify-content: center; gap: 36px; flex-wrap: wrap;
+  padding-bottom: 50px; margin-bottom: 50px; border-bottom: 1px solid var(--border);
+}
+.badges-row span { font-weight: 800; font-size: .78rem; letter-spacing: .07em; color: var(--text-muted); }
+.team-photo-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 54px; align-items: center; }
+.team-photo-panel {
+  position: relative; border-radius: 32px; overflow: hidden; height: 420px;
+  background: linear-gradient(150deg, #0D6FA6 0%, var(--coral) 55%, #29B6F6 100%);
+}
+.team-photo-panel .office-blob {
+  position: absolute; border-radius: 50%; background: rgba(255,255,255,.08);
+}
+.team-photo-panel .figures { position: absolute; inset: 0; display: flex; align-items: flex-end; justify-content: center; gap: 6px; }
+
 /* ---------- FAQ ---------- */
 .faq-list { max-width: 780px; margin: 0 auto; }
 .faq-item { border-bottom: 1px solid var(--border); }
@@ -509,7 +554,9 @@ section { padding: 100px 0; position: relative; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 980px) {
-  .hero-grid, .split, .split.rev, .contact-grid { grid-template-columns: 1fr; }
+  .hero-grid, .split, .split.rev, .contact-grid, .proof-grid, .team-photo-grid { grid-template-columns: 1fr; }
+  .team-photo-panel { height: 320px; }
+  .badges-row { gap: 20px 28px; }
   .split.rev { direction: ltr; }
   .hero-art { height: 340px; order: -1; }
   .pain-grid, .diff-grid, .service-grid { grid-template-columns: 1fr; }
